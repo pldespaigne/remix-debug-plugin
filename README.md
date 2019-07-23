@@ -3,7 +3,7 @@
 > This repo is a Remix debug plugin, its goal is to help plugin dev to test their plugins.
 > It cloud also help the Remix dev to test their plugin api.
 
-## 📥 Instaltion
+## 📥 Instalation
 This steps will let you use the debug plugin in your Remix IDE :
 - open [Remix](https://remix.ethereum.org)
 - go the Plugin Manager
