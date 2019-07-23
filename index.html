@@ -7,10 +7,38 @@
   <title>3Box Spaces for Remix</title>
 </head>
 <body>
-  <!-- Remix Plugin inject boostrap theme by default -->
-  <button class="btn btn-primary" id="main-btn">
-    Connect MetaMask to this plugin
-  </button>
+  <section class="card m-3">
+    <div class="card-header">
+      <h5 class="card-title">Emit Event</h5>
+    </div>
+    <div class="card-body">
+      <input type="text" class="form-control" placeholder="Event name" id="emit-name">
+      <input type="text" class="form-control" placeholder="Event value (string)" id="emit-value">
+      <button class="btn btn-primary" id="emit-btn">Emit</button>
+    </div>
+  </section>
+
+  <section class="card m-3">
+    <div class="card-header">
+      <h5 class="card-title">Register Event</h5>
+    </div>
+    <div class="card-body">
+      <input type="text" class="form-control" placeholder="Plugin name" id="register-plugin">
+      <input type="text" class="form-control" placeholder="Event name" id="register-event">
+      <button class="btn btn-primary" id="register-btn">Register</button>
+    </div>
+  </section>
+
+  <section class="card m-3">
+    <div class="card-header">
+      <h5 class="card-title">Call Function</h5>
+    </div>
+    <div class="card-body">
+      <input type="text" class="form-control" placeholder="Plugin name" id="call-plugin">
+      <input type="text" class="form-control" placeholder="Function name" id="call-function">
+      <button class="btn btn-primary" id="call-btn">Call</button>
+    </div>
+  </section>
 
   <script src="/dist/main.js"></script>
 </body>
