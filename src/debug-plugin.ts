@@ -7,10 +7,11 @@ export class DebugPlugin extends PluginClient {
     this.onload().then(()=>{
       console.log('*** plugin loaded');
       this.on('solidity', 'compilationFinished', (...args: any) => this.eventReceived('solidity', 'compilationFinished', ...args));
-      document.querySelector('#emit-btn')!.addEventListener('click', this.handleEmit);
-      document.querySelector('#register-btn')!.addEventListener('click', this.handleRegister);
-      document.querySelector('#call-btn')!.addEventListener('click', this.handleCall);
+      document.querySelector('#emit-btn')!.addEventListener('click', () => this.handleEmit());
+      document.querySelector('#register-btn')!.addEventListener('click', () => this.handleRegister());
+      document.querySelector('#call-btn')!.addEventListener('click', () => this.handleCall());
       this.methods = ['sayHello'];
+      console.log(this);
     });
   }
 
@@ -32,7 +33,7 @@ export class DebugPlugin extends PluginClient {
     this.on(pluginName as any, eventName, (...args: any) => this.eventReceived(pluginName, eventName, ...args));
   }
 
-  public async handleCall() {
+  private async handleCall() {
     const pluginName = document.querySelector<HTMLInputElement>('#call-plugin')!.value;
     const functionName = document.querySelector<HTMLInputElement>('#call-function')!.value;
     console.log(`<<<  calling function ${functionName} of plugin ${pluginName}`);
@@ -41,7 +42,7 @@ export class DebugPlugin extends PluginClient {
   }
 
   public sayHello() {
-    console.log( ` >>> call sayHello`);
+    console.log( `*** ${this.currentRequest.from} has called sayHello`);
     return 'Hellooooo \ud83c\udf89';
   }
 }
