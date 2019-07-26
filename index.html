@@ -7,41 +7,46 @@
   <title>Debug plugin for Remix</title>
 </head>
 <body>
-  <section class="card m-3">
-    <div class="card-header">
-      <h5 class="card-title">Emit Event</h5>
-    </div>
-    <div class="card-body">
-      <input type="text" class="form-control" placeholder="Event name" id="emit-name">
-      <input type="text" class="form-control" placeholder="Event value (string)" id="emit-value">
-      <button class="btn btn-primary" id="emit-btn">Emit</button>
-    </div>
-  </section>
+  <main class="bg-light">
+    <section class="card m-3">
+      <div class="card-header">
+        <h5 class="card-title">Call Function</h5>
+      </div>
+      <div class="card-body">
+        <input type="text" class="form-control" placeholder="Plugin name" id="call-plugin">
+        <input type="text" class="form-control" placeholder="Function name" id="call-function">
+        <input type="text" class="form-control" placeholder="Function args" id="call-args">
+        <samll class="form-text text-muted">comma separated string only without spaces : "arg1,arg2,arg3"</samll>
+        <button class="btn btn-primary btn-block" id="call-btn">Call</button>
+      </div>
+    </section>
 
-  <section class="card m-3">
-    <div class="card-header">
-      <h5 class="card-title">Register Event</h5>
-    </div>
-    <div class="card-body">
-      <input type="text" class="form-control" placeholder="Plugin name" id="register-plugin">
-      <input type="text" class="form-control" placeholder="Event name" id="register-event">
-      <button class="btn btn-primary" id="register-btn">Register</button>
-    </div>
-  </section>
+    <section class="card m-3">
+      <div class="card-header">
+        <h5 class="card-title">Emit Event</h5>
+      </div>
+      <div class="card-body">
+        <input type="text" class="form-control" placeholder="Event name" id="emit-name">
+        <input type="text" class="form-control" placeholder="Event value (string)" id="emit-value">
+        <button class="btn btn-primary btn-block" id="emit-btn">Emit</button>
+      </div>
+    </section>
 
-  <section class="card m-3">
-    <div class="card-header">
-      <h5 class="card-title">Call Function</h5>
-    </div>
-    <div class="card-body">
-      <input type="text" class="form-control" placeholder="Plugin name" id="call-plugin">
-      <input type="text" class="form-control" placeholder="Function name" id="call-function">
-      <input type="text" class="form-control" placeholder="Function args" id="call-args">
-      <samll calss="form-text text-muted">comma separated string only without spaces : "arg1,arg2,arg3"</samll>
-      <button class="btn btn-primary" id="call-btn">Call</button>
-    </div>
-  </section>
+    <section class="card m-3">
+      <div class="card-header">
+        <h5 class="card-title">Register Event</h5>
+      </div>
+      <div class="card-body">
+        <input type="text" class="form-control" placeholder="Plugin name" id="register-plugin">
+        <input type="text" class="form-control" placeholder="Event name" id="register-event">
+        <button class="btn btn-primary btn-block" id="register-btn">Register</button>
+      </div>
+    </section>
 
+    <section class="text-center">
+      <small class="text-muted">made by <a href="https://github.com/pldespaigne" target="_blank" rel="noopener">@pldespaigne</a></small>
+    </section>
+  </main>
   <script src="/dist/main.js"></script>
 </body>
 </html>
