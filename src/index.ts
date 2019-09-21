@@ -1,5 +1,3 @@
-
-// import { Remix3BoxPlugin } from './remix-3box-plugin';
 import { DebugPlugin } from './debug-plugin';
 
 import { connectIframe, listenOnThemeChanged } from '@remixproject/plugin';

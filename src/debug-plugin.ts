@@ -27,7 +27,7 @@ export class DebugPlugin extends PluginClient {
   private handleEmit() {
     const eventName = document.querySelector<HTMLInputElement>('#emit-name')!.value;
     const eventValue = document.querySelector<HTMLInputElement>('#emit-value')!.value;
-    console.log(`<<<  emiting ${eventName} with value ${eventValue}`);
+    console.log(`<<<  emitting ${eventName} with value :`, eventValue);
     this.emit(eventName, eventValue);
   }
 
@@ -41,10 +41,12 @@ export class DebugPlugin extends PluginClient {
   private handleCall() {
     const pluginName = document.querySelector<HTMLInputElement>('#call-plugin')!.value;
     const functionName = document.querySelector<HTMLInputElement>('#call-function')!.value;
-    const args = document.querySelector<HTMLInputElement>('#call-args')!.value.split(',');
+    const argsObj = JSON.parse(document.querySelector<HTMLInputElement>('#call-args')!.value);
+    const args: any[] = [];
+    for ( let key in argsObj ) args.push(argsObj[key]);
     console.log(`<<<  calling function ${functionName} of plugin ${pluginName} with args :`, args);
     this.call(pluginName as any, functionName, ...args).then(result => {
-      console.log(` >>> call has returned ${result}`);
+      console.log(` >>> call has returned :`, result);
     });
     
   }
